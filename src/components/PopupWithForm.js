@@ -2,14 +2,7 @@ import React from 'react';
 import closeBtn from './../images/Close-Icon.svg';
 
 function PopupWithForm( 
-	{title, name, isOpen, onClose, children}
-	// title, 
-	// name,
-	// handlerOnSubmit,
-	// btnText,
-  // isOpen,
-  // onClose
-	// popupData, ...props
+	{title, name, isOpen, onClose, children}	
 	)
 {
 		// const [isOpen, setIsOpen] = React.useState(false);

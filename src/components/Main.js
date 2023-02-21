@@ -36,7 +36,9 @@ function Main(props) {
 					<div className="personal-page__account">
 						<h1 className="personal-page__username">Жа</h1>
 						<button className="personal-page__edit popup-open" type="button" name="button1">
-							<img src={editBtn} className="personal-page__open"
+							<img src={editBtn} 
+							onClick={props.onEditPersonalData}
+							className="personal-page__open"
 								alt="Редактировать профиль" />
 								
 						</button>
@@ -45,7 +47,9 @@ function Main(props) {
 				</div>
 			</div>
 			<button className="personal-page__button popup-open" type="button" name="button2">
-				<img src={addBtn} className="personal-page__image-button" alt="Добавить" />						
+				<img src={addBtn} className="personal-page__image-button" alt="Добавить"
+					onClick={props.onAddNewCard}
+				/>						
 			</button>
 		</section>
 		<section className="gallery">
