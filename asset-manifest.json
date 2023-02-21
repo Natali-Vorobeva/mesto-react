@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/Natali-Vorobeva/mesto-react/static/css/main.a2bd3f99.css",
-    "main.js": "/Natali-Vorobeva/mesto-react/static/js/main.d3f82ac5.js",
-    "static/media/Inter-Black.woff": "/Natali-Vorobeva/mesto-react/static/media/Inter-Black.fd37f7e052bea1018058.woff",
-    "static/media/Inter-Regular.woff": "/Natali-Vorobeva/mesto-react/static/media/Inter-Regular.34ed58565339f4f3be40.woff",
-    "static/media/Inter-Black.woff2": "/Natali-Vorobeva/mesto-react/static/media/Inter-Black.141c7af6ed109b318513.woff2",
-    "static/media/Inter-Regular.woff2": "/Natali-Vorobeva/mesto-react/static/media/Inter-Regular.4c96ed73beaf6d1e6cc7.woff2",
-    "static/media/Inter-Medium.woff": "/Natali-Vorobeva/mesto-react/static/media/Inter-Medium.f4d11c8a0b8ff301493a.woff",
-    "static/media/Inter-Medium.woff2": "/Natali-Vorobeva/mesto-react/static/media/Inter-Medium.8a50feca5194fae5cc45.woff2",
-    "static/media/logo.svg": "/Natali-Vorobeva/mesto-react/static/media/logo.9acae8482e5b5b17160c46db4e2718a2.svg",
-    "index.html": "/Natali-Vorobeva/mesto-react/index.html",
-    "static/media/garbage.svg": "/Natali-Vorobeva/mesto-react/static/media/garbage.823b0cf1b0b7e9cb7cad209d1e19258f.svg",
-    "static/media/favorite-black.svg": "/Natali-Vorobeva/mesto-react/static/media/favorite-black.e787eeb70bb65b7b453a96e80f61569b.svg",
-    "static/media/Edit-Button.svg": "/Natali-Vorobeva/mesto-react/static/media/Edit-Button.af236f6cf67005f1d7aa37d370e5df9d.svg",
-    "static/media/Close-Icon.svg": "/Natali-Vorobeva/mesto-react/static/media/Close-Icon.2ceb783afbab75916ddcbb98f868ff01.svg",
-    "static/media/add-button.svg": "/Natali-Vorobeva/mesto-react/static/media/add-button.bed8c136e13907f5eefb86d62a5fe29e.svg",
-    "main.a2bd3f99.css.map": "/Natali-Vorobeva/mesto-react/static/css/main.a2bd3f99.css.map",
-    "main.d3f82ac5.js.map": "/Natali-Vorobeva/mesto-react/static/js/main.d3f82ac5.js.map"
+    "main.css": "/Natali-Vorobeva/mesto-react/src/index/static/css/main.0c99f3a2.css",
+    "main.js": "/Natali-Vorobeva/mesto-react/src/index/static/js/main.e563caa8.js",
+    "static/media/Inter-Black.woff": "/Natali-Vorobeva/mesto-react/src/index/static/media/Inter-Black.fd37f7e052bea1018058.woff",
+    "static/media/Inter-Regular.woff": "/Natali-Vorobeva/mesto-react/src/index/static/media/Inter-Regular.34ed58565339f4f3be40.woff",
+    "static/media/Inter-Black.woff2": "/Natali-Vorobeva/mesto-react/src/index/static/media/Inter-Black.141c7af6ed109b318513.woff2",
+    "static/media/Inter-Regular.woff2": "/Natali-Vorobeva/mesto-react/src/index/static/media/Inter-Regular.4c96ed73beaf6d1e6cc7.woff2",
+    "static/media/Inter-Medium.woff": "/Natali-Vorobeva/mesto-react/src/index/static/media/Inter-Medium.f4d11c8a0b8ff301493a.woff",
+    "static/media/Inter-Medium.woff2": "/Natali-Vorobeva/mesto-react/src/index/static/media/Inter-Medium.8a50feca5194fae5cc45.woff2",
+    "static/media/logo.svg": "/Natali-Vorobeva/mesto-react/src/index/static/media/logo.9acae8482e5b5b17160c46db4e2718a2.svg",
+    "index.html": "/Natali-Vorobeva/mesto-react/src/index/index.html",
+    "static/media/garbage.svg": "/Natali-Vorobeva/mesto-react/src/index/static/media/garbage.823b0cf1b0b7e9cb7cad209d1e19258f.svg",
+    "static/media/favorite-black.svg": "/Natali-Vorobeva/mesto-react/src/index/static/media/favorite-black.e787eeb70bb65b7b453a96e80f61569b.svg",
+    "static/media/Edit-Button.svg": "/Natali-Vorobeva/mesto-react/src/index/static/media/Edit-Button.af236f6cf67005f1d7aa37d370e5df9d.svg",
+    "static/media/Close-Icon.svg": "/Natali-Vorobeva/mesto-react/src/index/static/media/Close-Icon.2ceb783afbab75916ddcbb98f868ff01.svg",
+    "static/media/add-button.svg": "/Natali-Vorobeva/mesto-react/src/index/static/media/add-button.bed8c136e13907f5eefb86d62a5fe29e.svg",
+    "main.0c99f3a2.css.map": "/Natali-Vorobeva/mesto-react/src/index/static/css/main.0c99f3a2.css.map",
+    "main.e563caa8.js.map": "/Natali-Vorobeva/mesto-react/src/index/static/js/main.e563caa8.js.map"
   },
   "entrypoints": [
-    "static/css/main.a2bd3f99.css",
-    "static/js/main.d3f82ac5.js"
+    "static/css/main.0c99f3a2.css",
+    "static/js/main.e563caa8.js"
   ]
 }
