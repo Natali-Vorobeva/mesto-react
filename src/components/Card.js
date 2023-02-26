@@ -18,13 +18,16 @@ import dislikeBtn from './../images/favorite-black.svg';
 					
 					/>
 					<figcaption className="gallery__description">
-						<h2 className="gallery__name">{card.title}</h2>
+						<h2 className="gallery__name">{card.name}</h2>
 						<div className="gallery__likes">
 							<button className="gallery__button-favourites" type="button" name="button">
 								<img src={likeBtn} className="gallery__image-favourites-liked active" alt="Добавить в избранное"/>
 								<img src={dislikeBtn} className="gallery__image-favourites" alt="Добавить в избранное" />
 							</button>
-							<p className="gallery__likes-counter">{card.likes.length}</p>
+							{
+								card.likes.length !== 0 ? <p className="gallery__likes-counter">{card.likes.length}</p> :<p className="gallery__likes-counter">0</p>
+							}
+							{/* <p className="gallery__likes-counter">{card.likes.length}</p> */}
 						</div>
 
 					</figcaption>

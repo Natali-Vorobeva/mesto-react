@@ -8,42 +8,18 @@ import Card from "./Card";
 import loading from "./../images/loading-btn-main.gif"
 
 function Main(props) {
-	// const [dataPersonal, setDataPersonal] = useState({})
-	// useEffect(() => {
-	// 	api.getUserInfo(dataPersonal)
-	// 	.then((values) => {
-	// 		const newDataPersonal = ((values) => {	
-
-	// 			return {
-	// 				id: values._id,
-	// 				name: values.name,
-	// 				about: values.about,
-	// 				avatar: values.avatar
-	// 			}
-	// 		})
-	// 		setDataPersonal(newDataPersonal)
-	// 	})
-	// }, [])
+	
 	const [userId, setUserId] = useState([]);
 	const [userName, setUserName] = useState('');
-	const [userDescription, setUserDescription] = React.useState('');
-	const [userAvatar, setUserAvatar] = React.useState('https://489609.selcdn.ru/public-pachca-prod-uploads/attaches/user/image/71489/ава.jpg');
+	const [userDescription, setUserDescription] = useState('');
+	const [userAvatar, setUserAvatar] = useState('https://avatars.mds.yandex.net/i?id=f8bc5b5b48bb9be581ffadc82779061be133213f-7564382-images-thumbs&n=13');
 	const [cards, setCards] = useState([]);
-	const [loadingBoolean, setLoadingBoolean] = useState(false);
-	// useEffect(() => {		
-	// 	api.getInitialCards(cards)
-	// 	.then((data) => {			
-	// 		const newCards = data.map((card) => {				
-	// 			return {
-	// 				id: card._id,
-	// 				link: card.link,
-	// 				alt: card.name,
-	// 				title: card.name
-	// 			}
-	// 		})
-	// 		setCards(newCards)
-	// 	})
-	// }, [])	
+	const [loadingForMain, setLoadingForMain] = useState(false);
+	
+	
+	const [isHovered, setIsHovered] = useState(false);
+	const toggleHover = () => setIsHovered(!isHovered);
+
 	useEffect(() => {
 		Promise.all([api.getUserInfo(), api.getInitialCards()])
 			.then(([me, cards]) => {
@@ -52,7 +28,7 @@ function Main(props) {
 				setUserDescription(me.about);
 				setUserAvatar(me.avatar);
 				setCards(cards);
-				setLoadingBoolean(true);				
+				setLoadingForMain(true);				
 			})
 			.catch((err) => {
 				console.log(`Ошибка: ${err}`);
@@ -60,25 +36,28 @@ function Main(props) {
 			.finally(() => { });
 	}, [])	
 
+		
 	return (
 		<>
-		{ loadingBoolean ?
+		{ loadingForMain ?
 			<main className="main">
 				<section className="personal-page">
 					<div className="personal-page__title">
-						<div className="personal-page__avatar-container">
-							<div className="personal-page__avatar-container-overlay overlay-hover">
+						<div className="personal-page__avatar-container" 
+						onMouseEnter={toggleHover}
+						onMouseLeave={toggleHover}>
+						<div className={`personal-page__avatar-container-overlay  ${isHovered ? "" : "overlay-hover" } `}>		
 								<img src={editButton} className="personal-page__edit-overlay"
 									alt="Редактировать аватарку" />
 							</div>
 							<div className="personal-page__avatar-container-avatar">
-								<img src="#" className="personal-page__avatar" alt="Здесь должна быть аватарка"
+								<img src={userAvatar} className="personal-page__avatar" alt="Здесь должна быть аватарка"
 									onClick={props.onEditAvatar} />
 							</div>
 						</div>
 						<div className="personal-page__data">
 							<div className="personal-page__account">
-								<h1 className="personal-page__username">Жа</h1>
+								<h1 className="personal-page__username">{userName}</h1>
 								<button className="personal-page__edit popup-open" type="button" name="button1">
 									<img src={editBtn}
 										onClick={props.onEditPersonalData}
@@ -87,7 +66,7 @@ function Main(props) {
 
 								</button>
 							</div>
-							<p className="personal-page__about">Исследователь планеты</p>
+							<p className="personal-page__about">{userDescription}</p>
 						</div>
 					</div>
 					<button className="personal-page__button popup-open" type="button" name="button2" onClick={props.onAddNewCard}>
@@ -103,8 +82,8 @@ function Main(props) {
 				</section>
 			</main>
 			:
-			<div className='loading-data'>
-				<img className='loading-data__img' src={loading} alt='Загрузка'/>
+			<div className='loading'>
+				<img className='loading__img' src={loading} alt='Загрузка'/>
 			</div>
 		}
 		</>

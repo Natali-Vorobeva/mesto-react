@@ -38,6 +38,8 @@ function App() {
 		setSelectedCard({});
 	};
 
+	
+
 	return (
 		<div className="page__content">
 			<Header />

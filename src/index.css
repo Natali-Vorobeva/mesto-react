@@ -61,3 +61,9 @@
 @import url('./blocks/overlay-hover/overlay-hover.css');
 @import url('./blocks/inputValidStyle/inputValidStyle.css');
 @import url('./blocks/errorValidStyle/errorValidStyle.css');
+
+@import url('./blocks/loading/loading.css');
+@import url('./blocks/loading/__img/loading__img.css');
+
+
+
