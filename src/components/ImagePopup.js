@@ -33,7 +33,7 @@ function ImagePopup({card, onClose}
 			<figure className="popup__card-body">
 				<button className="popup__close" type="button" name="button13" aria-label="Закрыть">
 					<img id="card-close" src={closeBtn} className="popup__image-close" alt="Закрыть окно" 
-					// onClick={onClose}
+					onClick={onClose}
 					/>
 				</button>
 				<img className="popup__show-image" src={card.link} alt="#" />
