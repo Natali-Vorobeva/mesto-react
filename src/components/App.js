@@ -1,25 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import garbageBtn from './../images/garbage.svg';
-import likeBtn from './../images/favorite-black.svg';
-import dislikeBtn from './../images/favorite-black.svg';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 import PopupWithForm from './PopupWithForm';
-// import EditAvatarPopup from './EditAvatarPopup';
 import ImagePopup from './ImagePopup';
-// import { api } from '../utils/Api.js';
+import { api } from '../utils/Api.js';
 
 
 
 function App() {
 
-	const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
+	const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
 	function handleEditAvatarClick() {
 		setIsEditAvatarPopupOpen(!isEditAvatarPopupOpen)
 	}
 
-	const [isEditPersonalPopupOpen, setIsEditPersonalPopupOpen] = React.useState(false);
+	const [isEditPersonalPopupOpen, setIsEditPersonalPopupOpen] = useState(false);
 	function handleEditPersonalClick() {
 		setIsEditPersonalPopupOpen(!isEditPersonalPopupOpen);
 	}
@@ -34,8 +30,26 @@ function App() {
 		setIsEditPersonalPopupOpen(false);
 		setIsAddNewCard(false);
 		// setIsDeleteCardQuestionPopupOpen(false);
-		// setSelectedCard({});
+		setSelectedCard({});
 	};
+
+	// const [userName, setUserName] = React.useState('Имя');
+  // const [userDescription, setUserDescription] = useState('описание');
+  // const [userAvatar, setUserAvatar] = useState('https://www.fonstola.ru/images/202010/fonstola.ru_410502.jpg');
+  // const [cards, setCards] = useState([]);
+  // const [userId, setUserId] = useState([]);
+
+
+	const [isEditImage, setIsEditImage] = useState(false);
+	function handleEditImage() {
+		setIsEditImage(!isEditImage);
+		console.log(isEditImage);
+	}
+
+	const [selectedCard, setSelectedCard] = useState({})
+	function handleCardClick(card) {
+    setSelectedCard(card)
+  }
 
 
 	return (
@@ -45,6 +59,7 @@ function App() {
 				onEditAvatar={handleEditAvatarClick}
 				onEditPersonalData={handleEditPersonalClick}
 				onAddNewCard={handleAddNewCardClick}
+				onCardClick={handleCardClick}
 			/>
 			<Footer />
 			<PopupWithForm
@@ -69,7 +84,7 @@ function App() {
 			>
 				<div className="popup__input-container">
 					<input type="text" id="username-input" placeholder="Имя" className="popup__input popup__input_data_name"
-						name="name" required />
+						name="name" minLength="2" maxLength="40" required />
 					<span className="username-input-error popup__input-error"></span>
 					<input type="text" id="about-input" placeholder="Вид деятельности"
 						className="popup__input popup__input_data_about" name="about" required />
@@ -86,19 +101,18 @@ function App() {
 			>
 				<div className="popup__input-container">
 					<input type="text" id="name-card-input" placeholder="Название" className="popup__input popup__input_name_card"
-						name="name" required />
+						name="name" minLength="2" maxLength="30" required />
 					<span className="name-card-input-error popup__input-error"></span>
 					<input type="url" id="link-image-input" placeholder="Ссылка на картинку"
 						className="popup__input popup__input_address_image" name="link" required />
 					<span className="link-image-input-error popup__input-error"></span>
 				</div>
 				<button id="avatar-save" type="submit" className="popup__save" name="button2">Сохранить</button>
-
 			</PopupWithForm>
 
-			<ImagePopup />
+			<ImagePopup isOpen={isEditImage} />
 
-			<template id="card-template" className="template">
+			{/* <template id="card-template" className="template">
 				<figure className="gallery__card-body">
 					<img src={garbageBtn} className="gallery__delete" alt="Удалить" />
 					<img src="#" className="gallery__image gallery__image_source_card" alt="" />
@@ -114,7 +128,7 @@ function App() {
 
 					</figcaption>
 				</figure>
-			</template>
+			</template> */}
 		</div>
 	)
 

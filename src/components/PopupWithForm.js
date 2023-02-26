@@ -23,7 +23,7 @@ function PopupWithForm(
 					<form action="#" 
 									name={name} 
 									className="form popup__content popup__content_form_avatar"   
-									noValidate
+									
 									// onSubmit={handleOnSubmit}
 									>					
 									
