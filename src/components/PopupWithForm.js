@@ -1,23 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import closeBtn from './../images/Close-Icon.svg';
 
 function PopupWithForm( 
 	{title, name, isOpen, onClose, children}	
 	)
 {
-		// const [isOpen, setIsOpen] = React.useState(false);
+	useEffect(() => {
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscClose)
+    }
+    return () => {
+      document.removeEventListener('keydown', handleEscClose)
+    }
+  }, [isOpen])
 
-  // function handleClick() {
-	// 	setIsOpen(true);
-	// }
-	
+  function handleEscClose(evt){
+    if (evt.key === 'Escape') {
+      onClose();
+    };
+  };
 
-	if(isOpen){
-    // document.addEventListener('keydown', handleEscClose);
+  function mouseDownClose(evt){
+    if (evt.target.classList.contains('popup__container')) {
+      onClose();
+    };
+    
   }
 
 	return(
-		<div className={`popup popup_form_${name} ${isOpen ? "popup_opened" : ""}`}>
+		<div className={`popup popup_form_${name} ${isOpen ? "popup_opened" : ""}`}
+		onMouseDown={mouseDownClose}>
 			<div className="popup__container">
 				
 					<form action="#" 
@@ -45,8 +57,7 @@ function PopupWithForm(
 						alt="Закрыть окно"
 						onClick={onClose}
 						/>
-					</button>	
-				
+					</button>					
 				</form>
 				
 			</div>

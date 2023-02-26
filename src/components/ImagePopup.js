@@ -1,13 +1,34 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import closeBtn from './../images/Close-Icon.svg';
 
-function ImagePopup(props
-	// onClose
+function ImagePopup({card, onClose}
+	
 	) {
+		useEffect(() => {
+			if (Object.keys(card).length !== 0) {
+				document.addEventListener('keydown', handleEscClose)
+			}
+			return () => {
+				document.removeEventListener('keydown', handleEscClose)
+			}
+		}, [card])
+
+		function handleEscClose(evt){
+			if (evt.key === 'Escape') {
+				onClose();
+			};
+		};
+	
+		function mouseDownClose(evt){
+			if (evt.target.classList.contains('popup__container')) {
+				onClose();
+			};			
+		}
 
 
 	return (
-	<div className={`popup popup_card_image" ${props.isOpen ? "popup_opened" : ""}`}>
+	<div className={`popup popup_card_image" ${Object.keys(card).length !== 0 ? "popup_opened" : ""}`}
+	onMouseDown={mouseDownClose}>
 		<div className="popup__container">
 			<figure className="popup__card-body">
 				<button className="popup__close" type="button" name="button13" aria-label="Закрыть">
@@ -15,9 +36,9 @@ function ImagePopup(props
 					// onClick={onClose}
 					/>
 				</button>
-				<img className="popup__show-image" src={props.link} alt="#" />
+				<img className="popup__show-image" src={card.link} alt="#" />
 				<figcaption>
-					<h2 className="popup__description-name">{props.title}</h2>
+					<h2 className="popup__description-name">{card.name}</h2>
 				</figcaption>
 			</figure>
 		</div>

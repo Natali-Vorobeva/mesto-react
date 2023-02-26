@@ -25,6 +25,11 @@ function App() {
 		setIsAddNewCard(!isAddNewCard);
 	}
 
+	const [selectedCard, setSelectedCard] = useState({})
+	function handleCardClick(card) {
+    setSelectedCard(card)
+  }
+
 	function closeAllPopups() {
 		setIsEditAvatarPopupOpen(false);
 		setIsEditPersonalPopupOpen(false);
@@ -32,25 +37,6 @@ function App() {
 		// setIsDeleteCardQuestionPopupOpen(false);
 		setSelectedCard({});
 	};
-
-	// const [userName, setUserName] = React.useState('Имя');
-  // const [userDescription, setUserDescription] = useState('описание');
-  // const [userAvatar, setUserAvatar] = useState('https://www.fonstola.ru/images/202010/fonstola.ru_410502.jpg');
-  // const [cards, setCards] = useState([]);
-  // const [userId, setUserId] = useState([]);
-
-
-	const [isEditImage, setIsEditImage] = useState(false);
-	function handleEditImage() {
-		setIsEditImage(!isEditImage);
-		console.log(isEditImage);
-	}
-
-	const [selectedCard, setSelectedCard] = useState({})
-	function handleCardClick(card) {
-    setSelectedCard(card)
-  }
-
 
 	return (
 		<div className="page__content">
@@ -87,7 +73,7 @@ function App() {
 						name="name" minLength="2" maxLength="40" required />
 					<span className="username-input-error popup__input-error"></span>
 					<input type="text" id="about-input" placeholder="Вид деятельности"
-						className="popup__input popup__input_data_about" name="about" required />
+						className="popup__input popup__input_data_about" name="about" minLength="2" maxLength="200" required />
 					<span className="about-input-error popup__input-error"></span>
 				</div>
 				<button id="avatar-save" type="submit" className="popup__save" name="button2">Сохранить</button>
@@ -110,7 +96,7 @@ function App() {
 				<button id="avatar-save" type="submit" className="popup__save" name="button2">Сохранить</button>
 			</PopupWithForm>
 
-			<ImagePopup isOpen={isEditImage} />
+			<ImagePopup card={selectedCard} onClose={closeAllPopups} />
 
 			{/* <template id="card-template" className="template">
 				<figure className="gallery__card-body">
