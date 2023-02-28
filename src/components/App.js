@@ -5,7 +5,6 @@ import Footer from './Footer';
 import PopupWithForm from './PopupWithForm';
 import ImagePopup from './ImagePopup';
 
-
 function App() {
 
 	const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);

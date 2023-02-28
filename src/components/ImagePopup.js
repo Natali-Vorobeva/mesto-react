@@ -18,7 +18,6 @@ function ImagePopup({ card, onClose }) {
 		};
 	};
 
-
 	return (
 		<div className={`popup popup_card_image ${Object.keys(card).length !== 0 ? "popup_opened" : ""}`}>
 			<div className="popup__container">

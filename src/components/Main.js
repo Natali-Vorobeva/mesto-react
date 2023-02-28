@@ -16,6 +16,7 @@ function Main(props) {
 	const [cards, setCards] = useState([]);
 	const [loadingForMain, setLoadingForMain] = useState(false);	
 	const [isHovered, setIsHovered] = useState(false);
+
 	const toggleHover = () => setIsHovered(!isHovered);
 
 	useEffect(() => {
@@ -73,7 +74,7 @@ function Main(props) {
 				<section className="gallery">
 					{
 						cards.map((card) => {
-							return <Card card={card} onCardClick={props.onCardClick} onDeletePlace={props.onDeletePlace} key={card._id} />
+							return <Card card={card} onCardClick={props.onCardClick} key={card._id} />
 						})
 					}
 				</section>

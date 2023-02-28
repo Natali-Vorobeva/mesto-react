@@ -27,9 +27,7 @@ function Card({ card, onCardClick }) {
 					{
 						card.likes.length !== 0 ? <p className="gallery__likes-counter">{card.likes.length}</p> : <p className="gallery__likes-counter">0</p>
 					}
-
 				</div>
-
 			</figcaption>
 		</figure>
 	)
