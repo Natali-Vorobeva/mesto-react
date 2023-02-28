@@ -1,12 +1,12 @@
 export const selectorsList = {
-  formSelector: '.form',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__save',
-  inactiveButtonClass: 'popup__save_disabled',
-  inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__error',
-  validStyleInputClass: 'inputValidStyle',
-  validStyleErrorClass: 'errorValidStyle',
+	formSelector: '.form',
+	inputSelector: '.popup__input',
+	submitButtonSelector: '.popup__save',
+	inactiveButtonClass: 'popup__save_disabled',
+	inputErrorClass: 'popup__input_type_error',
+	errorClass: 'popup__error',
+	validStyleInputClass: 'inputValidStyle',
+	validStyleErrorClass: 'error-valid-style',
 }
 export const popupAvatar = document.querySelector('.personal-page__avatar');
 export const formAvatar = document.forms['avatar'];

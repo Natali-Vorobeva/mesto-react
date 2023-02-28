@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import editButton from './../images/edit-button.png';
 import editBtn from './../images/Edit-Button.svg';
 import addBtn from './../images/add-button.svg';
-// import closeBtn from './../images/Close-Icon.svg';
 import { api } from '../utils/Api.js';
 import Card from "./Card";
-import loading from "./../images/loading-btn-main.gif"
+
+import loading from "./../images/loading-main.gif";
 
 function Main(props) {
 	
@@ -14,9 +14,7 @@ function Main(props) {
 	const [userDescription, setUserDescription] = useState('');
 	const [userAvatar, setUserAvatar] = useState('https://avatars.mds.yandex.net/i?id=f8bc5b5b48bb9be581ffadc82779061be133213f-7564382-images-thumbs&n=13');
 	const [cards, setCards] = useState([]);
-	const [loadingForMain, setLoadingForMain] = useState(false);
-	
-	
+	const [loadingForMain, setLoadingForMain] = useState(false);	
 	const [isHovered, setIsHovered] = useState(false);
 	const toggleHover = () => setIsHovered(!isHovered);
 
@@ -36,7 +34,6 @@ function Main(props) {
 			.finally(() => { });
 	}, [])	
 
-		
 	return (
 		<>
 		{ loadingForMain ?
@@ -76,7 +73,7 @@ function Main(props) {
 				<section className="gallery">
 					{
 						cards.map((card) => {
-							return <Card card={card} onCardClick={props.onCardClick} key={card._id} />
+							return <Card card={card} onCardClick={props.onCardClick} onDeletePlace={props.onDeletePlace} key={card._id} />
 						})
 					}
 				</section>

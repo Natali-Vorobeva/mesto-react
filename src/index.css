@@ -59,11 +59,10 @@
 
 @import url('./blocks/active/active.css');
 @import url('./blocks/overlay-hover/overlay-hover.css');
-@import url('./blocks/inputValidStyle/inputValidStyle.css');
-@import url('./blocks/errorValidStyle/errorValidStyle.css');
+@import url('./blocks/input-valid-style/input-valid-style.css');
+@import url('./blocks/error-valid-style/error-valid-style.css');
 
 @import url('./blocks/loading/loading.css');
 @import url('./blocks/loading/__img/loading__img.css');
-
-
-
+@import url('./blocks/loading-btn/loading-btn.css');
+@import url('./blocks/loading-btn/__img/loading-btn__img.css');
