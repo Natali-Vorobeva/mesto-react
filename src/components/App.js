@@ -48,7 +48,6 @@ function App() {
 			<PopupWithForm
 				name={'personal'}
 				title={"Редактировать профиль"}
-				buttonText={"Сохранить"}
 				isOpen={isEditPersonalPopupOpen}
 				onClose={closeAllPopups}
 			>
@@ -81,7 +80,6 @@ function App() {
 			<PopupWithForm
 				name={'avatar'}
 				title={"Обновить аватар?"}
-				buttonText={"Сохранить"}
 				isOpen={isEditAvatarPopupOpen}
 				onClose={closeAllPopups}
 			>

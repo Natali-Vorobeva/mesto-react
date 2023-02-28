@@ -9,7 +9,7 @@ import loading from "./../images/loading-main.gif";
 
 function Main(props) {
 	
-	const [userId, setUserId] = useState([]);
+	const [userId, setUserId] = useState('');
 	const [userName, setUserName] = useState('');
 	const [userDescription, setUserDescription] = useState('');
 	const [userAvatar, setUserAvatar] = useState('https://avatars.mds.yandex.net/i?id=f8bc5b5b48bb9be581ffadc82779061be133213f-7564382-images-thumbs&n=13');
@@ -32,8 +32,7 @@ function Main(props) {
 			.catch((err) => {
 				console.log(`Ошибка: ${err}`);
 			})
-			.finally(() => { });
-	}, [])	
+		}, [])	
 
 	return (
 		<>

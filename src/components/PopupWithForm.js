@@ -50,7 +50,7 @@ function PopupWithForm({ title, name, isOpen, onClose, children, buttonText, isS
 						disabled={isSubmitDisabled}
 						className={isSubmitDisabled ? "popup__save popup__save_disabled" : "popup__save"}
 						name="button2">
-					{buttonText}
+					{buttonText || 'Сохранить'}
 					</button>
 					}
 					<button className="popup__close" type="button" name="button1" aria-label="Закрыть">
