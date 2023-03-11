@@ -60,6 +60,14 @@ class Api {
       .then(this._parseResponse);
   }
 
+	changeLikeCardStatus(cardId, isLiked) {
+    if (isLiked) {
+      return this.setLike(cardId);
+    } else {
+      return this.deleteLike(cardId);
+    }
+  }
+
   // Получение информации о пользователе с сервера
   getUserInfo() {
     return fetch(`${this._url}/users/me`, {

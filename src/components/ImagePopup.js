@@ -18,8 +18,15 @@ function ImagePopup({ card, onClose }) {
 		};
 	};
 
+	function mouseDownClose(evt) {
+		if (evt.target.classList.contains('popup__container')) {
+			onClose();
+		};
+	}
+
 	return (
-		<div className={`popup popup_card_image ${Object.keys(card).length !== 0 ? "popup_opened" : ""}`}>
+		<div className={`popup popup_card_image ${Object.keys(card).length !== 0 ? "popup_opened" : ""}`}
+		onClick={mouseDownClose}>
 			<div className="popup__container">
 				<figure className="popup__card-body">
 					<button className="popup__close" type="button" name="button13" aria-label="Закрыть">
