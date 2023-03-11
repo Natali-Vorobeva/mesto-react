@@ -27,23 +27,9 @@ function App() {
 	const [selectedCard, setSelectedCard] = useState({});
 	const [cards, setCards] = useState([]);
 	const [loadingForMain, setLoadingForMain] = useState(false);
-	const [cardId, setCardId] = useState([]);
-
-	// const [isConfirmationCardDeletionPopupOpened, setConfirmationCardDeletionPopupOpened] = useState(false);
 	const [isConfirmationCardDeletionPopupOpened, setConfirmationCardDeletionPopupOpened] = useState({
     isOpen: false, card: {}
   });
-
-	// useEffect(() => {
-	// 	Promise.all([api.getUserInfo(), api.getInitialCards()])
-	// 		.then(([me, cards]) => {
-	// 			setCurrentUser(me);
-	// 			setCards(cards);
-	// 		})
-	// 		.catch((err) => {
-	// 			console.log(`Ошибка: ${err}`);
-	// 		})
-	// }, [])
 
 	useEffect(() => {
 		api.getInitialCards()

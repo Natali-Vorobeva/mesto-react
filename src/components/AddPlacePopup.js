@@ -41,7 +41,9 @@ export default function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
 							minLength="2" 
 							maxLength="30" 
 							required 
-							onChange={handleNameChange}/>
+							onChange={handleNameChange}
+							value={name}
+							/>
 						<span className="name-card-input-error popup__input-error"></span>
 						<input type="url" id="link-image-input" 
 							value={link} 
@@ -49,7 +51,8 @@ export default function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
 							className="popup__input popup__input_address_image" 
 							name="link" 
 							required 
-							onChange={handleLinkChange}/>
+							onChange={handleLinkChange}
+							/>
 						<span className="link-image-input-error popup__input-error"></span>
 					</div>
 				</PopupWithForm>
